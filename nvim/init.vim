@@ -1,6 +1,7 @@
 source ~/AppData/Local/nvim/vim-plug/plugins.vim 
 source ~\AppData\Local\nvim\statusline.vim
 
+
 "" Important!!
 "        if has('termguicolors')
 "          set termguicolors
