@@ -1,31 +1,19 @@
-source ~/AppData/Local/nvim/vim-plug/plugins.vim 
-source ~\AppData\Local\nvim\statusline.vim
+source ~/.config/nvim/vim-plug/plugins.vim
+source ~/.config/nvim/vim-plug/nvim-cmp-config.vim
+"source ~/.config/nvim/lsp-config.vim
 
-
-"" Important!!
-"        if has('termguicolors')
-"          set termguicolors
-"        endif
-"        " The configuration options should be placed before `colorscheme sonokai`.
-"        let g:sonokai_style = 'maia'
-"        let g:sonokai_enable_italic = 1
-"        let g:sonokai_disable_italic_comment = 1
-"        colorscheme sonokai
-"if (has("autocmd") && !has("gui_running"))
-"    augroup colorset
-"        autocmd!
-"        let s:white = { "gui": "#ABB2BF", "cterm": "145", "cterm16" : "7"  }
-"        autocmd ColorScheme * call onedark#set_highlight("Normal", { "fg": s:white  }) " `bg` will not be styled since there is no `bg` setting
-"    augroup END
-"endif
+"luafile ~/.config/nvim/lua/plugins/compe-config.lua
+"luafile ~/.config/nvim/lua/plugins/lsp-config.lua
+luafile ~/.config/nvim/lua/plugins/lualine.lua
+luafile ~/.config/nvim/lua/plugins/nvim-cmp.lua
+"luafile ~/.config/nvim/lua/plugins/treesitter.lua
 
 set termguicolors
-colorscheme nord
+colorscheme embark
 set cursorline 
 set encoding=UTF-8
 hi! Normal ctermbg=NONE guibg=NONE
 
-set mouse=a
 set number relativenumber
 
 " narvigation
@@ -48,3 +36,12 @@ vnoremap j h
 " terminal mode map
 tnoremap <ESC> <C-\><C-n>
 
+" Snippets
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsEditSplit="vertical"
+
+" omni func enable
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
