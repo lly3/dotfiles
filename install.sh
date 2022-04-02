@@ -1,4 +1,5 @@
 #!/bin/sh
+
 # my install script for pacman on arch linux w/ systemd
 
 # set keyboard layout
