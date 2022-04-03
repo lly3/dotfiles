@@ -6,7 +6,7 @@
 echo "KEYMAP=colemak" > /etc/vconsole.conf
 
 sudo pacman -Syu --noconfirm
-sudo pacman -S --noconfirm git zsh noto-fonts ttf-anonymous-pro ttf-nerd-fonts-symbols alacritty picom make feh base-devel neovim
+sudo pacman -S --noconfirm git zsh noto-fonts ttf-anonymous-pro ttf-nerd-fonts-symbols alacritty picom make feh base-devel neovim python3 python-pip
 
 # zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" # ohmyzsh
@@ -27,3 +27,4 @@ mkdir ~/Pictures && cp $(pwd)/wallpaper/83106977_p0.jpg ~/Pictures
 
 # neovim set up
 cp -rf $(pwd)/nvim/ ~/.config/
+python3 -m pip install --user --upgrade pynvim
