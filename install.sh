@@ -1,5 +1,4 @@
 #!/bin/sh
-
 # my install script for pacman on arch linux w/ systemd
 
 # set keyboard layout
@@ -20,11 +19,11 @@ cd /usr/src/st && sudo make clean install
 cd /usr/src/dmenu && sudo make clean install
 
 cd ~/dotfiles/
-cp $(pwd)/.xinitrc ~/
+cp ./.xinitrc ~/
 
 # set up wallpaper
-mkdir ~/Pictures && cp $(pwd)/wallpaper/83106977_p0.jpg ~/Pictures
+mkdir -p ~/Pictures && cp ./wallpaper/83106977_p0.jpg ~/Pictures
 
 # neovim set up
-cp -rf $(pwd)/nvim/ ~/.config/
+cp -rf ./nvim/ ~/.config/
 python3 -m pip install --user --upgrade pynvim
