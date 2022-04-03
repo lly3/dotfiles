@@ -19,10 +19,11 @@ cd /usr/src/dwm && sudo make clean install
 cd /usr/src/st && sudo make clean install
 cd /usr/src/dmenu && sudo make clean install
 
-cp ./.xinitrc ~/
+cd ~/dotfiles/
+cp $(pwd)/.xinitrc ~/
 
 # set up wallpaper
-mkdir ~/Pictures && cp ./wallpaper/83106977_p0.jpg ~/Pictures
+mkdir ~/Pictures && cp $(pwd)/wallpaper/83106977_p0.jpg ~/Pictures
 
 # neovim set up
-./nvim/install.sh
+cp -rf $(pwd)/nvim/ ~/.config/
