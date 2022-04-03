@@ -3,10 +3,10 @@
 # my install script for pacman on arch linux w/ systemd
 
 # set keyboard layout
-echo "KEYMAP=colemak" >> /etc/vconsole.conf
+echo "KEYMAP=colemak" > /etc/vconsole.conf
 
 sudo pacman -Syu --noconfirm
-sudo pacman -S --noconfirm git zsh noto-fonts ttf-anonymous-pro ttf-nerd-fonts-symbols alacritty picom make feh
+sudo pacman -S --noconfirm git zsh noto-fonts ttf-anonymous-pro ttf-nerd-fonts-symbols alacritty picom make feh base-devel neovim
 
 # zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" # ohmyzsh
@@ -19,10 +19,10 @@ cd /usr/src/dwm && sudo make clean install
 cd /usr/src/st && sudo make clean install
 cd /usr/src/dmenu && sudo make clean install
 
-mv ./.xinitrc ~/
+cp ./.xinitrc ~/
 
 # set up wallpaper
-mv ./wallpaper/83106977_p0.jpg ~/Pictures
+mkdir ~/Pictures && cp ./wallpaper/83106977_p0.jpg ~/Pictures
 
 # neovim set up
 ./nvim/install.sh
