@@ -7,10 +7,10 @@ echo "KEYMAP=colemak" > /etc/vconsole.conf
 sudo pacman -Syu --noconfirm
 sudo pacman -S --noconfirm git zsh noto-fonts ttf-anonymous-pro ttf-nerd-fonts-symbols alacritty picom make feh base-devel neovim python3 python-pip xorg-server xorg-apps xorg-xinit xterm
 
+chsh -s /bin/zsh
+
 # zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" & # ohmyzsh
-
-chsh -s /bin/zsh
 
 # make install dwm st dmenu
 sudo mv ./{dwm,st,dmenu} /usr/src/
