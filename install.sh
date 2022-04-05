@@ -25,5 +25,5 @@ cp ./.xinitrc ~/
 mkdir -p ~/Pictures && cp ./wallpaper/83106977_p0.jpg ~/Pictures
 
 # neovim set up
-cp -rf ./nvim/ ~/.config/
+cp -rf ./nvim ~/.config
 python3 -m pip install --user --upgrade pynvim
