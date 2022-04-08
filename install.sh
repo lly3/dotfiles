@@ -5,7 +5,7 @@
 echo "KEYMAP=colemak" > /etc/vconsole.conf
 
 sudo pacman -Syu --noconfirm
-sudo pacman -S --noconfirm git zsh noto-fonts ttf-anonymous-pro ttf-nerd-fonts-symbols alacritty picom make feh base-devel neovim python3 python-pip xorg-server xorg-apps xorg-xinit xterm
+sudo pacman -S --noconfirm git zsh noto-fonts ttf-anonymous-pro ttf-nerd-fonts-symbols alacritty picom make feh base-devel neovim python3 python-pip xorg-server xorg-apps xorg-xinit xterm pacman-contrib tmux
 
 chsh -s /bin/zsh
 
@@ -25,5 +25,7 @@ cp ./.xinitrc ~/
 mkdir -p ~/Pictures && cp ./wallpaper/83106977_p0.jpg ~/Pictures
 
 # neovim set up
-mkdir -p ~/.config && cp -rf ./nvim ~/.config
-python3 -m pip install --user --upgrade pynvim
+./nvim/install.sh
+
+# tmux
+cp -rf {.tmux-themepack/,.tmux.conf} ~/
