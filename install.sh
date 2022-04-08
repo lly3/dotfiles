@@ -25,7 +25,7 @@ cp ./.xinitrc ~/
 mkdir -p ~/Pictures && cp ./wallpaper/83106977_p0.jpg ~/Pictures
 
 # neovim set up
-./nvim/install.sh
+cd nvim && ./install.sh && cd -
 
 # tmux
 cp -rf {.tmux-themepack/,.tmux.conf} ~/
