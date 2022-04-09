@@ -13,7 +13,7 @@ chsh -s /bin/zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" & # ohmyzsh
 
 # make install dwm st dmenu
-sudo mv ./{dwm,st,dmenu} /usr/src/
+sudo cp -rf ./{dwm,st,dmenu} /usr/src/
 cd /usr/src/dwm && sudo make clean install
 cd /usr/src/st && sudo make clean install
 cd /usr/src/dmenu && sudo make clean install
@@ -29,3 +29,12 @@ cd nvim && ./install.sh && cd -
 
 # tmux
 cp -rf {.tmux-themepack/,.tmux.conf} ~/
+
+# display manager
+sudo cp -rf ly /usr/src/
+cd /usr/src/ly && sudo make install
+sudo systemctl enable ly.service
+sudo systemctl disable getty@tty2.service
+cd -
+
+
