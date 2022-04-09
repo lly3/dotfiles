@@ -1,5 +1,5 @@
 #!/bin/sh
-# my install script for pacman on arch linux w/ systemd
+# my install script for pacman on arch linux
 
 # set keyboard layout
 echo "KEYMAP=colemak" > /etc/vconsole.conf
