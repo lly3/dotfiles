@@ -37,4 +37,6 @@ sudo systemctl enable ly.service
 sudo systemctl disable getty@tty2.service
 cd -
 
+# alacritty
+cp -rf alacritty ~/.config
 
