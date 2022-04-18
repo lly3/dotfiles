@@ -3,6 +3,7 @@
 feh --bg-fill ~/Pictures/83106977_p0.jpg &
 picom &
 xset r rate 280 40 &
+xset r 66 &
 setxkbmap -layout "us,th" -variant "colemak," -option "grp:alt_shift_toggle" &
 
 dte() {
