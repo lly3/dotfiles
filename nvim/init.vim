@@ -1,5 +1,6 @@
 source ~/.config/nvim/vim-plug/plugins.vim
 source ~/.config/nvim/vim-plug/nvim-cmp-config.vim
+source ~/.config/nvim/vim-plug/fzf-preview-window.vim
 "source ~/.config/nvim/lsp-config.vim
 
 "luafile ~/.config/nvim/lua/plugins/compe-config.lua
