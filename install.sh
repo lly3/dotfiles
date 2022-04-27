@@ -5,7 +5,7 @@
 echo "KEYMAP=colemak" > /etc/vconsole.conf
 
 sudo pacman -Syu --noconfirm
-sudo pacman -S --noconfirm git zsh noto-fonts ttf-anonymous-pro ttf-nerd-fonts-symbols alacritty picom make feh base-devel neovim python3 python-pip xorg-server xorg-apps xorg-xinit xterm pacman-contrib tmux
+sudo pacman -S --noconfirm git zsh noto-fonts ttf-anonymous-pro ttf-nerd-fonts-symbols alacritty picom make feh base-devel neovim python3 python-pip xorg-server xorg-apps xorg-xinit xterm pacman-contrib tmux bat
 
 chsh -s /bin/zsh
 
