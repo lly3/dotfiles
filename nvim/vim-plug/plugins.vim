@@ -31,6 +31,4 @@ Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-" start munu
-Plug 'mhinz/vim-startify'
 call plug#end()
