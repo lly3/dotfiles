@@ -20,6 +20,7 @@ Plug 'matsuuu/pinkmare'
 Plug 'joshdick/onedark.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
+Plug 'morhetz/gruvbox'
 
 " Snippets
 Plug 'SirVer/ultisnips'
@@ -30,4 +31,6 @@ Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" start munu
+Plug 'mhinz/vim-startify'
 call plug#end()
