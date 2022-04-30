@@ -6,7 +6,7 @@ window:
     x: 5
     y: 5
 
-  opacity: 0.8
+  opacity: 0.93
 
 #colors:
 #  # Default colors
@@ -44,7 +44,7 @@ colors:
 
   # Normal colors
   normal:
-    black:   '0xFAE8B6'
+    black:   '0x32344a'
     red:     '0xff38a2'
     green:   '0x9cd162'
     yellow:  '0xffc85b'
@@ -52,14 +52,14 @@ colors:
     magenta: '0xd9bcef'
     cyan:    '0x87c095'
     white:   '0xfff0f5'
-
-  # Bright colors
-  bright:
-    black:   '0xFAE8B6'
-    red:     '0xff38a2'
-    green:   '0x9cd162'
-    yellow:  '0xffc85b'
-    blue:    '0xeba4ac'
-    magenta: '0xd9bcef'
-    cyan:    '0x87c095'
-    white:   '0xfff0f5'
+#
+#  # Bright colors
+#  bright:
+#    black:   '0xFAE8B6'
+#    red:     '0xff38a2'
+#    green:   '0x9cd162'
+#    yellow:  '0xffc85b'
+#    blue:    '0xeba4ac'
+#    magenta: '0xd9bcef'
+#    cyan:    '0x87c095'
+#    white:   '0xfff0f5'
