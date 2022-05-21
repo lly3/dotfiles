@@ -6,9 +6,7 @@ alias l='ls --time-style=+"" -Aoh'
 if [[ ! -d ~/.zsh/plugins/zsh-autocomplete ]]
 then
   mkdir -p ~/.zsh/plugins
-  cd ~/.zsh/plugins
-  git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git
-  cd -
+  git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ~/.zsh/plugins/zsh-autocomplete
 fi
 # source autocomplete
 source ~/.zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
