@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/melon/MyJavaProjectButBetterWithReact/client/src/pages/Home'
+let g:netrw_dirhist_3='/home/melon/MyJavaProjectButBetterWithReact/client/src/pages'
+let g:netrw_dirhist_2='/home/melon/MyJavaProjectButBetterWithReact/client/src'
+let g:netrw_dirhist_1='/home/melon/MyJavaProjectButBetterWithReact/client'
+let g:netrw_dirhist_0='/home/melon/MyJavaProjectButBetterWithReact'
+let g:netrw_dirhist_9='/home/melon/MyJavaProjectButBetterWithReact/client/src/pages/Home'
+let g:netrw_dirhist_8='/home/melon/MyJavaProjectButBetterWithReact/client/src/pages'
+let g:netrw_dirhist_7='/home/melon/MyJavaProjectButBetterWithReact/client/src'
+let g:netrw_dirhist_6='/home/melon/MyJavaProjectButBetterWithReact/client'
+let g:netrw_dirhist_5='/home/melon/MyJavaProjectButBetterWithReact/routes'
