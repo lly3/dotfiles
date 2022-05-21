@@ -1,7 +1,6 @@
 #!/bin/sh
 
-feh --bg-fill ~/Pictures/83106977_p0.jpg &
-picom &
+# feh --bg-fill ~/Pictures/83106977_p0.jpg & # set bg image
 xset r rate 280 40 &
 xset r 66 &
 setxkbmap -layout "us,th" -variant "colemak," -option "grp:alt_shift_toggle" &
