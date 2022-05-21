@@ -1,3 +1,22 @@
+let PATH = $HOME."/.vim/pack/tpope/start" " Path to plugins directory
+
+" Create plugins directory
+if !isdirectory(PATH)
+  call mkdir(PATH, "p")
+endif
+
+" Git fugitive plugins
+if !isdirectory(PATH."/fugitive")
+  call mkdir(PATH."/fugitive")
+  call system("git clone https://github.com/tpope/vim-fugitive ".PATH."/fugitive")
+endif
+
+" Vim-lsc plugins
+if !isdirectory(PATH."/vim-lsc")
+  call mkdir(PATH."/vim-lsc")
+  call system("git clone https://github.com/natebosch/vim-lsc ".PATH."/vim-lsc")
+endif
+
 syntax on
 set mouse=a
 set number
@@ -50,6 +69,7 @@ augroup filetype_netrw
   autocmd FileType netrw setl bufhidden=delete
 augroup END
 
+" handle each filetype
 augroup filetype_javascript
   autocmd!
   autocmd FileType javascript noremap <buffer> <localleader>c I//<esc>
