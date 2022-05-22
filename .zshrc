@@ -12,6 +12,20 @@ fi
 fpath=(~/.zsh/plugins/zsh-completions/src $fpath)
 autoload -Uz compinit && compinit
 
+# history setup
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
+HISTFILE=$HOME/.zhistory
+SAVEHIST=1000
+HISTSIZE=999
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt EXTENDED_HISTORY
+
+# history search completions
+autoload -Uz history-beginning-search-menu
+zle -N history-beginning-search-menu-end history-beginning-search-menu
+bindkey '^X^X' history-beginning-search-menu-end
+
 # Load version control information
 autoload -Uz vcs_info
 precmd() { vcs_info }
