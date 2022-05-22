@@ -3,13 +3,14 @@
 alias ls='ls --color=auto'
 alias l='ls --time-style=+"" -Aoh'
 
-if [[ ! -d ~/.zsh/plugins/zsh-autocomplete ]]
+# completions plugins
+if [[ ! -d ~/.zsh/plugins/zsh-completions ]]
 then
-  mkdir -p ~/.zsh/plugins
-  git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ~/.zsh/plugins/zsh-autocomplete
+  mkdir -p ~/.zsh/plugins/zsh-completions
+  git clone https://github.com/zsh-users/zsh-completions ~/.zsh/plugins/zsh-completions
 fi
-# source autocomplete
-source ~/.zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+fpath=(~/.zsh/plugins/zsh-completions/src $fpath)
+autoload -Uz compinit && compinit
 
 # Load version control information
 autoload -Uz vcs_info
