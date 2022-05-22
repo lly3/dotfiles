@@ -21,10 +21,17 @@ HISTSIZE=999
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt EXTENDED_HISTORY
 
-# history search completions
+# history search completions menu with <c-x><c-x>
 autoload -Uz history-beginning-search-menu
 zle -N history-beginning-search-menu-end history-beginning-search-menu
 bindkey '^X^X' history-beginning-search-menu-end
+
+# history search completions with arrow
+autoload -U history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^[[A" history-beginning-search-backward-end
+bindkey "^[[B" history-beginning-search-forward-end
 
 # Load version control information
 autoload -Uz vcs_info
