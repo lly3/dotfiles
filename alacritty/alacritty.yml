@@ -6,8 +6,12 @@ window:
     x: 5
     y: 5
 
-  opacity: 0.93
+  opacity: 1
 
+font:
+  normal:
+    family: terminus
+  size: 12
 #colors:
 #  # Default colors
 #  primary:
@@ -39,7 +43,8 @@ window:
 colors:
   # Default colors
   primary:
-    background: '0x202330'
+  #  background: '0x202330'
+    background: '0x000000'
     foreground: '0xfae8b6'
 
   # Normal colors
