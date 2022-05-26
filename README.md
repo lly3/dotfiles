@@ -1,1 +1,1 @@
-![alt text](https://raw.githubusercontent.com/oclassiccato/dotfiles/main/screenshot/2022-02-02-222740_1920x1080_scrot.png)
+![alt text](https://raw.githubusercontent.com/oclassiccato/dotfiles/main/screenshot/2022-05-26-210745_1920x1080_scrot.png)
