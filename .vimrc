@@ -22,11 +22,12 @@ set mouse=a
 set number
 set wildmenu
 set hlsearch
+set background=dark
 
 set laststatus=2
 
 set statusline=
-set statusline+=%.20F\ -\ FileType:%y\ %=Ln:\ %3l/%L
+set statusline+=%.20F\ -\ FileType:%y%m\ %=Ln:\ %3l/%L
 
 set fillchars+=vert:\ 
 
@@ -53,8 +54,8 @@ set omnifunc=syntaxcomplete#Complete
 let mapleader = "-"
 let maplocalleader = "\\"
 " mapping
+noremap ,. <esc>
 inoremap ,. <esc>
-inoremap <esc> <nop>
 noremap <leader>c I//<esc>
 " movement
 onoremap p i(
@@ -73,6 +74,8 @@ augroup END
 augroup filetype_javascript
   autocmd!
   autocmd FileType javascript noremap <buffer> <localleader>c I//<esc>
+  autocmd FileType javascript set tabstop=2
+  autocmd FileType javascript set shiftwidth=2
 augroup END
 augroup filetype_python
   autocmd!
@@ -94,7 +97,7 @@ let g:lsc_server_commands = {
  \ }
  \}
 let g:lsc_auto_map = {
- \  'GoToDefinition': 'gd',
+ \  'GoToDefinition': 'gf',
  \  'FindReferences': 'gr',
  \  'Rename': 'gR',
  \  'ShowHover': 'K',
