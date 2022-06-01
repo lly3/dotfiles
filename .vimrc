@@ -28,13 +28,15 @@ set laststatus=2
 
 set statusline=
 set statusline+=%.40F
-set statusline+=\ -\ 
-set statusline+=FileType:%y%m
-set statusline+=\ 
 set statusline+=%=
+set statusline+=%m
+set statusline+=\ 
+set statusline+=FileType:%y
+set statusline+=\ 
 set statusline+=Ln:\ %3l/%L
 
 set fillchars+=vert:\ 
+
 
 " narvigation
 " normal mode map
@@ -52,6 +54,9 @@ nnoremap <C-l> <C-W>l
 vnoremap h k
 vnoremap k j
 vnoremap j h
+
+" auto change current directory
+auto BufEnter * silent! lcd %:p:h
 
 " omni func
 set omnifunc=syntaxcomplete#Complete
