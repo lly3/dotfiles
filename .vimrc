@@ -27,7 +27,12 @@ set background=dark
 set laststatus=2
 
 set statusline=
-set statusline+=%.20F\ -\ FileType:%y%m\ %=Ln:\ %3l/%L
+set statusline+=%.40F
+set statusline+=\ -\ 
+set statusline+=FileType:%y%m
+set statusline+=\ 
+set statusline+=%=
+set statusline+=Ln:\ %3l/%L
 
 set fillchars+=vert:\ 
 
