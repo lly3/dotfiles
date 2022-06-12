@@ -23,6 +23,7 @@ set number
 set wildmenu
 set hlsearch
 set background=dark
+colorscheme gruvbox
 
 set laststatus=2
 
@@ -40,8 +41,8 @@ set fillchars+=vert:\
 
 " narvigation
 " normal mode map
-nnoremap h k
-nnoremap k j
+nnoremap h gk
+nnoremap k gj
 nnoremap j h
 
 " split navigation
@@ -50,13 +51,10 @@ nnoremap <C-k> <C-W>j
 nnoremap <C-h> <C-W>k
 nnoremap <C-l> <C-W>l
 
- " visual mode
-vnoremap h k
-vnoremap k j
+" visual mode
+vnoremap h gk
+vnoremap k gj
 vnoremap j h
-
-" auto change current directory
-auto BufEnter * silent! lcd %:p:h
 
 " omni func
 set omnifunc=syntaxcomplete#Complete
@@ -86,6 +84,18 @@ augroup filetype_javascript
   autocmd FileType javascript noremap <buffer> <localleader>c I//<esc>
   autocmd FileType javascript set tabstop=2
   autocmd FileType javascript set shiftwidth=2
+augroup END
+augroup filetype_css
+  autocmd!
+  autocmd FileType css noremap <buffer> <localleader>c I//<esc>
+  autocmd FileType css set tabstop=2
+  autocmd FileType css set shiftwidth=2
+augroup END
+augroup filetype_html
+  autocmd!
+  autocmd FileType html noremap <buffer> <localleader>c I//<esc>
+  autocmd FileType html set tabstop=2
+  autocmd FileType html set shiftwidth=2
 augroup END
 augroup filetype_python
   autocmd!
