@@ -17,6 +17,15 @@ if !isdirectory(PATH."/vim-lsc")
   call system("git clone https://github.com/natebosch/vim-lsc ".PATH."/vim-lsc")
 endif
 
+" Create colorscheme directory
+if !isdirectory($HOME."/.vim/colors")
+  call mkdir($HOME."/.vim/colors")
+endif
+
+if !filereadable($HOME."/.vim/colors/gruvbox.vim")
+  call system("wget https://raw.githubusercontent.com/morhetz/gruvbox/master/colors/gruvbox.vim -P ".$HOME."/.vim/colors/")
+endif
+
 syntax on
 set mouse=a
 set number

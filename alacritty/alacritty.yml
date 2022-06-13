@@ -10,8 +10,8 @@ window:
 
 font:
   normal:
-    family: terminus
-  size: 12
+    family: Iosevka Light
+  size: 14
 #colors:
 #  # Default colors
 #  primary:
