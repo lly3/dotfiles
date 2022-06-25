@@ -17,10 +17,22 @@ if !isdirectory(PATH."/vim-lsc")
   call system("git clone https://github.com/natebosch/vim-lsc ".PATH."/vim-lsc")
 endif
 
-" vim-polyglot plugins (language support)
+" vim-polyglot plugins (syntax support)
 if !isdirectory(PATH."/vim-polyglot")
 	call mkdir(PATH."/vim-polyglot")
 	call system("git clone --depth 1 https://github.com/sheerun/vim-polyglot ".PATH."/vim-polyglot")
+endif
+
+" UltiSnips plugins (snippet engine)
+if !isdirectory(PATH."/ultisnips")
+	call mkdir(PATH."/ultisnips")
+	call system("git clone https://github.com/SirVer/ultisnips ".PATH."/ultisnips")
+endif
+
+" vim-snippets plugins (more snippets)
+if !isdirectory(PATH."/vim-snippets")
+	call mkdir(PATH."/vim-snippets")
+	call system("git clone https://github.com/honza/vim-snippets ".PATH."/vim-snippets")
 endif
 
 " Create colorscheme directory
@@ -38,6 +50,7 @@ set number
 set wildmenu
 set hlsearch
 set background=dark
+let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
 hi Normal guibg=NONE ctermbg=NONE
 
@@ -141,3 +154,8 @@ set completeopt=menu,menuone,noinsert,noselect
 " polyglot plugins
 let g:polyglot_disabled = ['sensible']
 let g:polyglot_disabled = ['ftdetect']
+
+" vim-snippet(UltiSnips)
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
