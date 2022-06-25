@@ -2,7 +2,7 @@ let PATH = $HOME."/.vim/pack/tpope/start" " Path to plugins directory
 
 " Create plugins directory
 if !isdirectory(PATH)
-  call mkdir(PATH, "p")
+	call mkdir(PATH, "p")
 endif
 
 " Git fugitive plugins
@@ -15,6 +15,12 @@ endif
 if !isdirectory(PATH."/vim-lsc")
   call mkdir(PATH."/vim-lsc")
   call system("git clone https://github.com/natebosch/vim-lsc ".PATH."/vim-lsc")
+endif
+
+" vim-polyglot plugins (language support)
+if !isdirectory(PATH."/vim-polyglot")
+	call mkdir(PATH."/vim-polyglot")
+	call system("git clone --depth 1 https://github.com/sheerun/vim-polyglot ".PATH."/vim-polyglot")
 endif
 
 " Create colorscheme directory
@@ -33,6 +39,7 @@ set wildmenu
 set hlsearch
 set background=dark
 colorscheme gruvbox
+hi Normal guibg=NONE ctermbg=NONE
 
 set laststatus=2
 
@@ -46,7 +53,6 @@ set statusline+=\
 set statusline+=Ln:\ %3l/%L
 
 set fillchars+=vert:\ 
-
 
 " narvigation
 " normal mode map
@@ -91,20 +97,14 @@ augroup END
 augroup filetype_javascript
   autocmd!
   autocmd FileType javascript noremap <buffer> <localleader>c I//<esc>
-  autocmd FileType javascript set tabstop=2
-  autocmd FileType javascript set shiftwidth=2
 augroup END
 augroup filetype_css
   autocmd!
   autocmd FileType css noremap <buffer> <localleader>c I//<esc>
-  autocmd FileType css set tabstop=2
-  autocmd FileType css set shiftwidth=2
 augroup END
 augroup filetype_html
   autocmd!
   autocmd FileType html noremap <buffer> <localleader>c I//<esc>
-  autocmd FileType html set tabstop=2
-  autocmd FileType html set shiftwidth=2
 augroup END
 augroup filetype_python
   autocmd!
@@ -137,3 +137,7 @@ let g:lsc_enable_autocomplete = v:false
 let g:lsc_enable_diagnostics = v:false
 let g:lsc_reference_highlights = v:false
 set completeopt=menu,menuone,noinsert,noselect
+
+" polyglot plugins
+let g:polyglot_disabled = ['sensible']
+let g:polyglot_disabled = ['ftdetect']
