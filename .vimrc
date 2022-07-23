@@ -67,22 +67,11 @@ set statusline+=Ln:\ %3l/%L
 
 set fillchars+=vert:\ 
 
-" narvigation
-" normal mode map
-nnoremap h gk
-nnoremap k gj
-nnoremap j h
-
 " split navigation
-nnoremap <C-j> <C-W>h
-nnoremap <C-k> <C-W>j
-nnoremap <C-h> <C-W>k
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
-
-" visual mode
-vnoremap h gk
-vnoremap k gj
-vnoremap j h
 
 " omni func
 set omnifunc=syntaxcomplete#Complete
@@ -111,6 +100,12 @@ augroup filetype_javascript
   autocmd!
   autocmd FileType javascript noremap <buffer> <localleader>c I//<esc>
 augroup END
+augroup filetype_java
+  autocmd!
+  autocmd FileType java setlocal tabstop=4 
+  autocmd FileType java setlocal shiftwidth=4 
+  autocmd FileType java setlocal expandtab
+augroup END
 augroup filetype_css
   autocmd!
   autocmd FileType css noremap <buffer> <localleader>c I//<esc>
@@ -122,7 +117,7 @@ augroup END
 augroup filetype_python
   autocmd!
   autocmd FileType python noremap <buffer> <localleader>c I#<esc>
-  autocmd FileType python set makeprg=python\ %:p
+  autocmd FileType python setlocal makeprg=python\ %:p
   autocmd FileType python compiler pyunit
 augroup END
 augroup filetype_vim
@@ -132,19 +127,35 @@ augroup END
 
 " language server config
 let g:lsc_server_commands = {
- \ 'javascript': {
- \ 'command': 'typescript-language-server --stdio',
- \ 'log_level': -1,
- \ 'suppress_stderr': v:true
- \ }
+  \ 'javascript': {
+  \   'command': 'typescript-language-server --stdio',
+  \   'log_level': -1,
+  \   'suppress_stderr': v:true
+  \ },
+  \ 'rust' : 'rls',
+  \ 'java' :  {
+  \   'command': '/usr/java/jls/java-language-server/dist/lang_server_linux.sh',
+  \   'suppress_stderr': v:true
+  \ },
+  \ 'php': {
+  \   'command': 'intelephense --stdio',
+  \     'message_hooks': {
+  \       'initialize': {
+  \         'initializationOptions': {'storagePath': '/tmp/intelephense'},
+  \       },
+  \     },
+  \ },
+  \ 'html': 'html-languageserver --stdio',
+  \ 'css': 'css-languageserver --stdio'
  \}
+" let g:lsc_auto_map = v:true
 let g:lsc_auto_map = {
  \  'GoToDefinition': 'gf',
  \  'FindReferences': 'gr',
  \  'Rename': 'gR',
  \  'ShowHover': 'K',
  \  'FindCodeActions': 'ga',
- \  'Completion': 'omnifunc',
+ \  'Completion': 'completefunc',
  \}
 let g:lsc_enable_autocomplete = v:false
 let g:lsc_enable_diagnostics = v:false
