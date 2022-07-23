@@ -1,7 +1,17 @@
 #!/bin/zsh
 
 alias ls='ls --color=auto'
-alias l='ls --time-style=+"" -Aoh'
+alias l='ls -Aoh'
+alias sail='./vendor/bin/sail'
+alias grep='grep --color'
+
+# set -o vi
+bindkey -v
+bindkey -M viins ',.' vi-cmd-mode
+
+# PATH
+PATH=$PATH:/usr/java/jdk-18.0.2/bin
+PATH=$PATH:/usr/java/apache-maven-3.8.6/bin
 
 # completions plugins
 if [[ ! -d ~/.zsh/plugins/zsh-completions ]]
@@ -30,8 +40,10 @@ bindkey '^X^X' history-beginning-search-menu-end
 autoload -U history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
-bindkey "^[[A" history-beginning-search-backward-end
+bindkey "^[[A" history-beginning-search-backward-end # with arrow
 bindkey "^[[B" history-beginning-search-forward-end
+bindkey -M vicmd 'k' history-beginning-search-backward-end # with j, k in vicmd
+bindkey -M vicmd 'j' history-beginning-search-forward-end
 
 # Load version control information
 autoload -Uz vcs_info
@@ -43,3 +55,4 @@ zstyle ':vcs_info:git:*' formats 'on branch %F{green}%b '
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
 PROMPT='%B%F{red}%1~%f%b ${vcs_info_msg_0_}%(?.%F{blue}>.%F{red}?%?)%f '
+
