@@ -23,6 +23,12 @@ if !isdirectory(PATH."/vim-polyglot")
 	call system("git clone --depth 1 https://github.com/sheerun/vim-polyglot ".PATH."/vim-polyglot")
 endif
 
+" blade.php systex support
+if !isdirectory(PATH."/vim-blade")
+  call mkdir(PATH."/vim-blade")
+  call system("git clone https://github.com/jwalton512/vim-blade ".PATH."/vim-blade")
+endif
+
 " UltiSnips plugins (snippet engine)
 if !isdirectory(PATH."/ultisnips")
 	call mkdir(PATH."/ultisnips")
@@ -46,12 +52,12 @@ endif
 
 syntax on
 set mouse=a
-set number
+set relativenumber
 set wildmenu
 set hlsearch
 set background=dark
 let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox
+colorscheme industry
 hi Normal guibg=NONE ctermbg=NONE
 
 set laststatus=2
@@ -124,6 +130,11 @@ augroup filetype_vim
   autocmd!
   autocmd FileType vim noremap <buffer> <localleader>c I"<esc>
 augroup END
+augroup filetype_blade
+  autocmd!
+  autocmd FileType blade UltiSnipsAddFiletype blade
+  autocmd FileType blade UltiSnipsAddFiletype html
+augroup END
 
 " language server config
 let g:lsc_server_commands = {
@@ -155,7 +166,7 @@ let g:lsc_auto_map = {
  \  'Rename': 'gR',
  \  'ShowHover': 'K',
  \  'FindCodeActions': 'ga',
- \  'Completion': 'completefunc',
+ \  'Completion': 'omnifunc',
  \}
 let g:lsc_enable_autocomplete = v:false
 let g:lsc_enable_diagnostics = v:false
