@@ -1,6 +1,6 @@
 #!/bin/sh
 
-feh --bg-fill ~/Pictures/83106977_p0.jpg & # set bg image
+feh --bg-fill ~/Pictures/2362526_p0.jpg
 # picom &
 xset r rate 280 40 &
 xset r 66 &
@@ -14,6 +14,11 @@ dte() {
 upd() {
 	upd="$(checkupdates | wc -l)"
 	echo -e "$upd updates"
+}
+
+batt() {
+	batt="$(acpi | awk '{print $4}')"
+	echo -e "batt: $batt"
 }
 
 mem() {
@@ -32,8 +37,8 @@ disk() {
 }
 
 while true; do
-	xsetroot -name "$(volume) | $(disk) | $(mem) | $(upd) | $(dte)"
-	sleep 15s
+	xsetroot -name "$(volume) | $(disk) | $(mem) | $(batt) | $(dte)"
+	sleep 1s
 done &
 
 exec dwm
