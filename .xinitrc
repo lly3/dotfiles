@@ -1,7 +1,7 @@
 #!/bin/sh
 
-feh --bg-fill ~/Pictures/2362526_p0.jpg
-# picom &
+feh --bg-fill ~/Pictures/440596-anime-anime-girls-cherry-blossom-5-Centimeters-Per.png
+picom &
 xset r rate 280 40 &
 xset r 66 &
 setxkbmap -layout "us,th" -variant "colemak," -option "grp:alt_shift_toggle" &
@@ -41,4 +41,4 @@ while true; do
 	sleep 1s
 done &
 
-exec dwm
+exec i3 

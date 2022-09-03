@@ -57,7 +57,7 @@ set wildmenu
 set hlsearch
 set background=dark
 let g:gruvbox_contrast_dark='hard'
-colorscheme industry
+colorscheme nord
 hi Normal guibg=NONE ctermbg=NONE
 
 set laststatus=2
@@ -79,19 +79,22 @@ nnoremap <C-k> <C-W>k
 nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
 
+nnoremap <C-d> M<C-d>
+nnoremap <C-u> M<C-u>
+
 " omni func
 set omnifunc=syntaxcomplete#Complete
 
 let mapleader = "-"
 let maplocalleader = "\\"
 " mapping
-noremap ,. <esc>
-inoremap ,. <esc>
 noremap <leader>c I//<esc>
 " movement
-onoremap p i(
+onoremap ( i(
+onoremap { i{
 onoremap " i"
-
+onoremap ' i'
+onoremap w iw
 " netrw
 let g:netrw_banner = 0 " netrw banner
 let g:netrw_liststyle = 3 " show tree listing style

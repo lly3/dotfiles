@@ -7,11 +7,6 @@ alias grep='grep --color'
 
 # set -o vi
 bindkey -v
-bindkey -M viins ',.' vi-cmd-mode
-
-# PATH
-PATH=$PATH:/usr/java/jdk-18.0.2/bin
-PATH=$PATH:/usr/java/apache-maven-3.8.6/bin
 
 # completions plugins
 if [[ ! -d ~/.zsh/plugins/zsh-completions ]]
@@ -56,3 +51,6 @@ zstyle ':vcs_info:git:*' formats 'on branch %F{green}%b '
 setopt PROMPT_SUBST
 PROMPT='%B%F{red}%1~%f%b ${vcs_info_msg_0_}%(?.%F{blue}>.%F{red}?%?)%f '
 
+# enviroment variables
+export JAVA_HOME='/usr/lib/jvm/java-11-openjdk'
+export PATH=$JAVA_HOME/bin:$PATH
