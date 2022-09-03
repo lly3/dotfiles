@@ -41,6 +41,12 @@ if !isdirectory(PATH."/vim-snippets")
 	call system("git clone https://github.com/honza/vim-snippets ".PATH."/vim-snippets")
 endif
 
+" vim-fzf plugins 
+if !isdirectory(PATH."/vim-fzf")
+	call mkdir(PATH."/vim-fzf")
+	call system("git clone https://github.com/junegunn/fzf.vim ".PATH."/vim-fzf")
+endif
+
 " Create colorscheme directory
 if !isdirectory($HOME."/.vim/colors")
   call mkdir($HOME."/.vim/colors")
@@ -49,6 +55,11 @@ endif
 if !filereadable($HOME."/.vim/colors/gruvbox.vim")
   call system("wget https://raw.githubusercontent.com/morhetz/gruvbox/master/colors/gruvbox.vim -P ".$HOME."/.vim/colors/")
 endif
+
+if !filereadable($HOME."/.vim/colors/nord.vim")
+  call system("wget https://raw.githubusercontent.com/arcticicestudio/nord-vim/main/colors/nord.vim -P ".$HOME."/.vim/colors/")
+endif
+
 
 syntax on
 set mouse=a
@@ -70,8 +81,6 @@ set statusline+=\
 set statusline+=FileType:%y
 set statusline+=\ 
 set statusline+=Ln:\ %3l/%L
-
-set fillchars+=vert:\ 
 
 " split navigation
 nnoremap <C-j> <C-W>j
@@ -184,3 +193,8 @@ let g:polyglot_disabled = ['ftdetect']
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
+
+" fzf.vim
+let g:fzf_layout = { 'down': '~40%' }
+noremap <silent><C-p> :Files<Cr>
+nnoremap <silent><leader>l :Buffers<CR>
