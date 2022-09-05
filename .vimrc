@@ -60,7 +60,6 @@ if !filereadable($HOME."/.vim/colors/nord.vim")
   call system("wget https://raw.githubusercontent.com/arcticicestudio/nord-vim/main/colors/nord.vim -P ".$HOME."/.vim/colors/")
 endif
 
-
 syntax on
 set mouse=a
 set relativenumber
@@ -74,7 +73,8 @@ hi Normal guibg=NONE ctermbg=NONE
 set laststatus=2
 
 set statusline=
-set statusline+=%.40F
+set statusline+=%#PmenuThumb#
+set statusline+=\ %.40F
 set statusline+=%=
 set statusline+=%m
 set statusline+=\ 
@@ -108,10 +108,12 @@ onoremap w iw
 let g:netrw_banner = 0 " netrw banner
 let g:netrw_liststyle = 3 " show tree listing style
 let g:netrw_preview = 1 " open split on right side
+
 augroup filetype_netrw
   autocmd!
   autocmd FileType netrw setl bufhidden=delete
 augroup END
+
 
 " handle each filetype
 augroup filetype_javascript
@@ -196,5 +198,5 @@ let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
 
 " fzf.vim
 let g:fzf_layout = { 'down': '~40%' }
-noremap <silent><C-p> :Files<Cr>
+noremap <silent><C-p> :GFiles<CR>
 nnoremap <silent><leader>l :Buffers<CR>

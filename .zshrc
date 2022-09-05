@@ -54,3 +54,4 @@ PROMPT='%B%F{red}%1~%f%b ${vcs_info_msg_0_}%(?.%F{blue}>.%F{red}?%?)%f '
 # enviroment variables
 export JAVA_HOME='/usr/lib/jvm/java-11-openjdk'
 export PATH=$JAVA_HOME/bin:$PATH
+
