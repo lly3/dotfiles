@@ -8,6 +8,7 @@ set number
 set relativenumber
 set wildmenu
 set hlsearch
+set encoding=utf-8
 colorscheme nord
 " hi Normal guibg=NONE ctermbg=NONE
 
