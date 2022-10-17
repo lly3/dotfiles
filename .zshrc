@@ -4,6 +4,7 @@ alias ls='ls --color=auto'
 alias l='ls -Aoh'
 alias sail='./vendor/bin/sail'
 alias grep='grep --color'
+alias vim='nvim'
 
 # set -o vi
 bindkey -v
