@@ -1,6 +1,4 @@
 {
-	"suggest.autoTrigger": "none",
-	"suggest.noselect": true,
 	"languageserver": {
 		"intelephense": {
 			"command": "intelephense",

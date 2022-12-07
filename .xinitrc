@@ -1,10 +1,14 @@
 #!/bin/sh
 
-feh --bg-fill ~/Pictures/440596-anime-anime-girls-cherry-blossom-5-Centimeters-Per.png
+# if there are VGA-1, open another window on left side
+if [[ ! -z $(xrandr --listmonitors | grep 'VGA-1') ]]
+then 
+	xrandr --output VGA-1 --auto --left-of LVDS-1 &
+fi
+feh --bg-fill ~/Pictures/anime-girl-sunflower-field-scenery-hd-wallpaper-854a.jpg &
 picom &
 xset r rate 280 40 &
-xset r 66 &
-setxkbmap -layout "us,th" -variant "colemak," -option "grp:alt_shift_toggle" &
+setxkbmap -layout "us,th" -option "grp:alt_shift_toggle" &
 
 dte() {
 	dte="$(date +"%A, %Y %B %d - %H:%M:%S")"
@@ -41,4 +45,4 @@ while true; do
 	sleep 1s
 done &
 
-exec i3 
+exec dwm 
