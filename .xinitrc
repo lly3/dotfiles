@@ -5,7 +5,7 @@ if [[ ! -z $(xrandr --listmonitors | grep 'VGA-1') ]]
 then 
 	xrandr --output VGA-1 --auto --left-of LVDS-1 &
 fi
-feh --bg-fill ~/Pictures/anime-girl-sunflower-field-scenery-hd-wallpaper-854a.jpg &
+feh --bg-fill Pictures/anime-girl-sunflower-field-scenery-hd-wallpaper-854a.jpg --bg-fill Pictures/919669.jpg
 picom &
 xset r rate 280 40 &
 setxkbmap -layout "us,th" -option "grp:alt_shift_toggle" &

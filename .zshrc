@@ -1,10 +1,11 @@
 #!/bin/zsh
 
 alias ls='ls --color=auto'
-alias l='ls -Aoh'
-alias sail='./vendor/bin/sail'
 alias grep='grep --color'
 alias vim='nvim'
+
+SUDO_EDITOR='/usr/bin/nvim'
+export SUDO_EDITOR
 
 # set -o vi
 bindkey -v
@@ -27,6 +28,8 @@ HISTSIZE=999
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt EXTENDED_HISTORY
 
+bindkey '^R' history-incremental-search-backward
+
 # history search completions menu with <c-x><c-x>
 autoload -Uz history-beginning-search-menu
 zle -N history-beginning-search-menu-end history-beginning-search-menu
@@ -38,8 +41,6 @@ zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 bindkey "^[[A" history-beginning-search-backward-end # with arrow
 bindkey "^[[B" history-beginning-search-forward-end
-bindkey -M vicmd 'k' history-beginning-search-backward-end # with j, k in vicmd
-bindkey -M vicmd 'j' history-beginning-search-forward-end
 
 # Load version control information
 autoload -Uz vcs_info
