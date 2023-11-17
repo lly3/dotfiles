@@ -275,3 +275,20 @@ hi! link diffAdded String
 let &background = s:style
 
 " }}}
+
+" nvim-treesitter
+" ---------
+hi! link TSParameter         Normal
+hi! link TSField             Normal
+hi! link TSProperty          Normal
+hi! link TSVariable          Normal
+hi! link TSNamespace         Normal
+hi! link TSType              Keyword
+if has('nvim-0.8.0')
+	hi! link @parameter TSParameter
+	hi! link @field     TSField    
+	hi! link @property  TSProperty 
+	hi! link @variable  TSVariable 
+	hi! link @namespace TSNamespace
+	hi! link @type      TSType
+endif
